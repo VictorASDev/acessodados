@@ -167,12 +167,17 @@ public class Interface extends javax.swing.JFrame {
 
     private void buttonRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonRemoverActionPerformed
         // TODO add your handling code here:
-        nomeCurso = inputNomeCurso.getText();
-        idCurso = Integer.parseInt(inputIdCurso.getText());
+        
+        try{
+            idCurso = Integer.parseInt(inputIdCurso.getText());
+        } catch (IllegalArgumentException e){
+            System.out.println("Erro: " + e.getMessage());
+        }
+        
         System.out.println(idCurso);
         Curso curso = new Curso();
         curso.setId(idCurso);
-        curso.setNome(nomeCurso);
+  
         CursoDAO cursoDao = new CursoDAO();
         cursoDao.excluir(curso);
         carregarTabela();
