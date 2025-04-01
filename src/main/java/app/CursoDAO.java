@@ -82,7 +82,7 @@ public class CursoDAO {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("DELETE from CURSO WHERE id = ?");
+            stmt = con.prepareStatement("DELETE from curso WHERE id = ?");
            
             stmt.setInt(1, curso.getId());
             
