@@ -1,0 +1,7 @@
+CREATE DATABASE curso;
+USE curso;
+
+CREATE TABLE cursos(
+	id int not null auto_increment,
+    nome varchar(30)
+);
